@@ -4,7 +4,7 @@ namespace light\CacheComponent;
 
 use memcached;
 
-class MemcacheDriver implements InterfaceDriver
+class MemcachedDriver implements InterfaceDriver
 {
     /**
      * @var memcached
