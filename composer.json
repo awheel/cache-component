@@ -1,0 +1,25 @@
+{
+    "name": "light/cache-component",
+    "description": "Cache Component for light",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fengqi",
+            "email": "lyf362345@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "suggest": {
+        "ext-redis": "PHP extension for interfacing with Redis",
+        "ext-memcached": "PHP extension for interfacing with memcached via libmemcached library"
+    },
+    "autoload": {
+        "psr-4": {
+            "light\\CacheComponent\\": "src/"
+        }
+    }
+}
