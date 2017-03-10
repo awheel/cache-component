@@ -23,10 +23,10 @@ class CacheComponent implements Component
      */
     public function register()
     {
-        $config = app()->configGet('cache');
-        if (!$config) return null;
+        return function () {
+            $config = app()->configGet('cache');
+            if (!$config) return null;
 
-        return function () use ($config) {
             return new Cache($config);
         };
     }
