@@ -13,14 +13,27 @@ return [
     // 配置
     'config' => [
         'redis' => [
+            'cluster' => false,
             'host' => '127.0.0.1',
             'port' => 6379,
             'db' => 0,
-            'password' => 'null!'
+            'password' => null,
+            'timeout' => 3
+        ],
+        'redis-cluster' => [
+            'cluster' => true,
+            'nodes' => [
+                ['host' => '127.0.0.1', 'port' => 6371, 'timeout' => 3],
+                ['host' => '127.0.0.1', 'port' => 6372, 'timeout' => 3],
+                ['host' => '127.0.0.1', 'port' => 6373, 'timeout' => 3],
+                ['host' => '127.0.0.1', 'port' => 6374, 'timeout' => 3],
+                ['host' => '127.0.0.1', 'port' => 6375, 'timeout' => 3],
+            ]
         ],
         'memcached' => [
             'host' => '127.0.0.1',
             'port' => 11211
-        ]
+        ],
+        'yac' => []
     ]
 ];

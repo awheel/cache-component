@@ -28,13 +28,6 @@ class Cache
     protected $config = [];
 
     /**
-     * 默认缓存时间
-     *
-     * @var
-     */
-    protected $default = 60;
-
-    /**
      * 缓存的 key 前缀
      *
      * @var
@@ -74,7 +67,7 @@ class Cache
      *
      * @return mixed
      */
-    public function add($key, $value, $second)
+    public function add($key, $value, $second = 60)
     {
         return $this->driver->add($this->key($key), $value, $second);
     }
@@ -88,7 +81,7 @@ class Cache
      *
      * @return mixed
      */
-    public function set($key, $value, $second)
+    public function set($key, $value, $second = 60)
     {
         return $this->driver->set($this->key($key), $value, $second);
     }
@@ -153,7 +146,7 @@ class Cache
      *
      * @return mixed
      */
-    public function pull($key, $default)
+    public function pull($key, $default = null)
     {
         $data = $this->get($this->key($key), $default);
         $this->remove($key);
@@ -175,7 +168,33 @@ class Cache
     }
 
     /**
-     * 缓存的 key 处理: 加前缀. todo 其它检查
+     * 让缓存 key 对应的 value 数值自增
+     *
+     * @param $key
+     * @param int $value
+     *
+     * @return mixed
+     */
+    public function increment($key, $value = 1)
+    {
+        return $this->driver->increment($key, $value);
+    }
+
+    /**
+     * 让缓存 key 对应的 value 数值自减
+     *
+     * @param  $key
+     * @param  $value
+     *
+     * @return mixed
+     */
+    public function decrement($key, $value = 1)
+    {
+        return $this->driver->decrement($key, $value);
+    }
+
+    /**
+     * 缓存的 key 处理: 加前缀
      *
      * @param $key
      *
@@ -183,6 +202,10 @@ class Cache
      */
     protected function key($key)
     {
+        if (!$this->prefix) {
+            return $key;
+        }
+
         if (is_array($key)) {
             foreach ($key as $k => $v) {
                 $key[$k] = $this->prefix.$v;

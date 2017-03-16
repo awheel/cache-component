@@ -3,11 +3,12 @@
 namespace light\CacheComponent;
 
 use Redis;
+use Predis\Client;
 
 class RedisDriver implements InterfaceDriver
 {
     /**
-     * @var Redis
+     * @var Redis|Client
      */
     public $driver;
 
@@ -18,18 +19,22 @@ class RedisDriver implements InterfaceDriver
      */
     public function __construct(array $config)
     {
-        // todo 扩展没安装, 抛出异常
+        if (isset($config['cluster']) && $config['cluster']) {
+            $redis = new Client($config['nodes'], ['cluster' => 'redis', 'exceptions' => false]);
+        }
+        else {
+            $host = $config['host'];
+            $port = isset($config['port']) ? $config['port'] : 6379;
+            $timeout = isset($config['timeout']) ? $config['timeout'] : 3;
+            $db = isset($config['db']) ? $config['db'] : 0;
+            $password = isset($config['password']) ? $config['password'] : null;
 
-        $host = $config['host'];
-        $port = isset($config['port']) ? $config['port'] : 6379;
-        $timeout = isset($config['timeout']) ? $config['timeout'] : 5;
-        $db = isset($config['db']) ? $config['db'] : 0;
-        $password = isset($config['password']) ? $config['password'] : null;
+            $redis = new Redis($host, $port, $timeout);
+            $redis->auth($password);
+            $redis->select($db);
+        }
 
-        $this->driver = new Redis();
-        $this->driver->connect($host, $port, $timeout);
-        $this->driver->auth($password);
-        $this->driver->select($db);
+        $this->driver = $redis;
 
         return $this;
     }
