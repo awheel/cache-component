@@ -15,7 +15,9 @@
     },
     "suggest": {
         "ext-redis": "PHP extension for interfacing with Redis",
-        "ext-memcached": "PHP extension for interfacing with memcached via libmemcached library"
+        "ext-memcached": "PHP extension for interfacing with memcached via libmemcached library",
+        "ext-yac": "lockless user data cache",
+        "predis/predis": "Flexible and feature-complete Redis client for PHP and HHVM"
     },
     "autoload": {
         "psr-4": {
