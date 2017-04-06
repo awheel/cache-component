@@ -1,7 +1,6 @@
 {
     "name": "awheel/cache-component",
-    "description": "Cache Component for Awheel",
-    "type": "library",
+    "description": "Awheel cache Component",
     "license": "MIT",
     "authors": [
         {
