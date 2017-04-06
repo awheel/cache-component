@@ -2,9 +2,6 @@
 
 namespace awheel\CacheComponent;
 
-use awheel\App;
-use awheel\CacheComponent\InterfaceDriver;
-
 /**
  * 缓存封装, 实际存储, 需要另外封装驱动.
  * 仅封装针对缓存的常规逻辑, 如需使用对应驱动的高级特性, 请绕过, 直接实例化.

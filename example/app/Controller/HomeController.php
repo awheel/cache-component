@@ -2,15 +2,20 @@
 
 namespace App\Controller;
 
-use awheel\Routing\Controller;
+use light\Routing\Controller;
 
-class TestController extends Controller
+/**
+ * Class HomeController
+ *
+ * @package App\Controller
+ */
+class HomeController extends Controller
 {
-    public function index()
-    {
-        return __CLASS__;
-    }
-
+    /**
+     * cache test
+     *
+     * @return array
+     */
     public function cache()
     {
         $key = 'cache_test';

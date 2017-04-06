@@ -26,8 +26,6 @@ return [
                 ['host' => '127.0.0.1', 'port' => 6371, 'timeout' => 3],
                 ['host' => '127.0.0.1', 'port' => 6372, 'timeout' => 3],
                 ['host' => '127.0.0.1', 'port' => 6373, 'timeout' => 3],
-                ['host' => '127.0.0.1', 'port' => 6374, 'timeout' => 3],
-                ['host' => '127.0.0.1', 'port' => 6375, 'timeout' => 3],
             ]
         ],
         'memcached' => [
