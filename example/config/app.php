@@ -2,6 +2,6 @@
 
 return [
     'component' => [
-        'light\CacheComponent\CacheComponent'
+        'awheel\CacheComponent\CacheComponent'
     ]
 ];

@@ -1,9 +1,9 @@
 <?php
 
-namespace light\CacheComponent;
+namespace awheel\CacheComponent;
 
-use light\App;
-use light\CacheComponent\InterfaceDriver;
+use awheel\App;
+use awheel\CacheComponent\InterfaceDriver;
 
 /**
  * 缓存封装, 实际存储, 需要另外封装驱动.
@@ -39,7 +39,7 @@ class Cache
      *
      * @var string
      */
-    protected $namespace = 'light\\CacheComponent\\';
+    protected $namespace = 'awheel\\CacheComponent\\';
 
     /**
      * Cache constructor.

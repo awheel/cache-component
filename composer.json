@@ -1,6 +1,6 @@
 {
-    "name": "light/cache-component",
-    "description": "Cache Component for light",
+    "name": "awheel/cache-component",
+    "description": "Cache Component for Awheel",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "light\\CacheComponent\\": "src/"
+            "awheel\\CacheComponent\\": "src/"
         }
     }
 }

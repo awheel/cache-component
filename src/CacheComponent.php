@@ -1,8 +1,8 @@
 <?php
 
-namespace light\CacheComponent;
+namespace awheel\CacheComponent;
 
-use light\Component;
+use awheel\Component;
 
 class CacheComponent implements Component
 {

@@ -1,7 +1,7 @@
 Cache Component
 ====
 
-Cache Component for light
+Cache Component for Awheel
 
 ## configure
 

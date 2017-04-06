@@ -1,6 +1,6 @@
 <?php
 
-namespace light\CacheComponent;
+namespace awheel\CacheComponent;
 
 use memcached;
 
