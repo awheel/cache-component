@@ -29,7 +29,8 @@ class RedisDriver implements InterfaceDriver
             $db = isset($config['db']) ? $config['db'] : 0;
             $password = isset($config['password']) ? $config['password'] : null;
 
-            $redis = new Redis($host, $port, $timeout);
+            $redis = new Redis();
+            $redis->connect($host, $port, $timeout);
             $password && $redis->auth($password);
             $redis->select($db);
         }
