@@ -1,10 +1,6 @@
-Cache Component
-====
+# Cache Component
 
 Cache Component for Awheel
-
-## configure
-
 
 ## usage
 
